@@ -1,0 +1,35 @@
+@import '../../styles/variables.scss';
+
+.layout {
+  min-height: 100vh;
+  background-color: $background-light;
+}
+
+.layout-main {
+  margin-left: 283px;
+  min-height: 100vh;
+  
+  @media (max-width: $mobile) {
+    margin-left: 0;
+  }
+}
+
+.layout-content {
+  padding-top: 100px;
+  min-height: calc(100vh - 100px);
+}
+
+.sidebar-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 99;
+  display: none;
+  
+  @media (max-width: $mobile) {
+    display: block;
+  }
+}

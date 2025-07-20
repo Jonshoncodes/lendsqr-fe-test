@@ -1,0 +1,191 @@
+@import '../../styles/variables.scss';
+
+.login-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: $white;
+  padding: $spacing-md;
+}
+
+.login-container {
+  width: 100%;
+  max-width: 1200px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 600px;
+  background-color: $white;
+  border-radius: $border-radius-lg;
+  overflow: hidden;
+  
+  
+  @media (max-width: $tablet) {
+    grid-template-columns: 1fr;
+    max-width: 500px;
+  }
+}
+
+.login-left {
+  background-color: $white; // CHANGED from gradient to white
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: $spacing-2xl;
+  position: relative;
+  
+  @media (max-width: $tablet) {
+    padding: $spacing-xl $spacing-lg;
+    min-height: 300px;
+  }
+  
+  .logo {
+    img {
+      height: 36px;
+      width: auto;
+    }
+  }
+  
+  .illustration {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    img {
+      max-width: 100%;
+      height: auto;
+      max-height: 337px;
+    }
+  }
+}
+
+.login-right {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: $spacing-2xl;
+  
+  @media (max-width: $tablet) {
+    padding: $spacing-xl $spacing-lg;
+  }
+}
+
+.login-form-container {
+  width: 100%;
+  max-width: 400px;
+}
+
+.login-header {
+  margin-bottom: $spacing-2xl;
+  
+  h1 {
+    font-size: $font-size-4xl;
+    font-weight: 700;
+    color: $text-primary;
+    margin-bottom: $spacing-md;
+    
+    @media (max-width: $mobile) {
+      font-size: $font-size-3xl;
+    }
+  }
+  
+  p {
+    font-size: $font-size-lg;
+    color: $text-secondary;
+    font-weight: 400;
+  }
+}
+
+.login-form {
+  .form-group {
+    margin-bottom: $spacing-lg;
+    
+    input {
+      width: 100%;
+      padding: 16px 20px;
+      border: 2px solid $border-color;
+      border-radius: $border-radius-md;
+      font-size: $font-size-base;
+      color: $text-primary;
+      background-color: $white;
+      transition: border-color 0.2s ease;
+      
+      &:focus {
+        outline: none;
+        border-color: $primary-color;
+      }
+      
+      &::placeholder {
+        color: $text-light;
+      }
+    }
+  }
+  
+  .password-input {
+    position: relative;
+    
+    .password-toggle {
+      position: absolute;
+      right: 16px;
+      top: 50%;
+      transform: translateY(-50%);
+      background: none;
+      border: none;
+      cursor: pointer;
+      color: $primary-color;
+      font-size: $font-size-xs;
+      font-weight: 600;
+      text-transform: uppercase;
+      
+      svg {
+        width: 16px;
+        height: 16px;
+      }
+      
+      &:hover {
+        color: darken($primary-color, 10%);
+      }
+    }
+  }
+  
+  .forgot-password {
+    text-align: left;
+    margin-bottom: $spacing-xl;
+    
+    a {
+      color: $primary-color;
+      text-decoration: none;
+      font-size: $font-size-xs;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+  
+  .login-btn {
+    width: 100%;
+    padding: 16px 24px;
+    background-color: $primary-color;
+    color: $white;
+    border: none;
+    border-radius: $border-radius-md;
+    font-size: $font-size-sm;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    
+    &:hover:not(:disabled) {
+      background-color: darken($primary-color, 10%);
+    }
+    
+    &:disabled {
+      opacity: 0.7;
+      cursor: not-allowed;
+    }
+  }
+}
