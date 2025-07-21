@@ -3,8 +3,8 @@ import { NavLink } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
 import './Sidebar.scss';
 
-// Import all SVG icons statically
-import DashboardIcon from '../../../icons2/dashboard.svg';
+// Import all custom SVG icons
+import DashboardIcon from "@/icons2/dashboard.svg";
 import BriefcaseIcon from '../../../icons2/briefcase.svg';
 import ChevronDownIcon from '../../../icons2/chevrondown.svg';
 import UsersIcon from '../../../icons2/users.svg';
@@ -28,23 +28,9 @@ import PreferencesIcon from '../../../icons2/preferences.svg';
 import FeesPricingIcon from '../../../icons2/feespricing.svg';
 import AuditLogsIcon from '../../../icons2/auditlogs.svg';
 
-// Icon component wrapper for consistent styling with error handling
-const IconWrapper: React.FC<{ src: string; alt: string; className?: string }> = ({ 
-  src, 
-  alt, 
-  className = 'icon' 
-}) => (
-  <img 
-    src={src} 
-    alt={alt} 
-    className={className}
-    onError={(e) => {
-      console.warn(`Failed to load icon: ${src}`);
-      // Fallback to a simple colored div if image fails
-      const target = e.target as HTMLImageElement;
-      target.style.display = 'none';
-    }}
-  />
+// Icon component wrapper for consistent styling
+const IconWrapper: React.FC<{ src: string; alt: string; className?: string }> = ({ src, alt, className = 'icon' }) => (
+  <img src={src} alt={alt} className={className} />
 );
 
 const Sidebar: React.FC = () => {
