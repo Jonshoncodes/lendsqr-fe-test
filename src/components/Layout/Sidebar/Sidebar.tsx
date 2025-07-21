@@ -3,35 +3,30 @@ import { NavLink } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
 import './Sidebar.scss';
 
-// Import all custom SVG icons
-import DashboardIcon from "@/icons2/dashboard.svg";
-import BriefcaseIcon from "@/icons2/briefcase.svg";
-import ChevronDownIcon from "@/icons2/chevrondown.svg";
-import UsersIcon from "@/icons2//users.svg";
-import GuarantorsIcon from "@/icons2/guarantors.svg";
-import LoansIcon from "@/icons2/loans.svg";
-import DecisionModelsIcon from "@/icons2/decisionmodels.svg";
-import SavingsIcon from "@/icons2/savings.svg";
-import LoanRequestsIcon from "@/icons2/loanrequests.svg";
-import WhitelistIcon from "@/icons2/whitelist.svg";
-import KarmaIcon from "@/icons2/karma.svg";
-import OrganizationIcon from "@/icons2/organization.svg";
-import LoanProductsIcon from "@/icons2/loanproducts.svg";
-import SavingsProductsIcon from "@/icons2//savingsproducts.svg";
-import FeesIcon from "@/icons2/fees.svg";
-import TransactionsIcon from "@/icons2/transactions.svg";
-import ServicesIcon from "@/icons2/services.svg";
-import ServiceAccountIcon from "@/icons2/serviceaccount.svg";
-import SettlementsIcon from "@/icons2/settlements.svg";
-import ReportsIcon from "@/icons2/reports.svg";
-import PreferencesIcon from "@/icons2/preferences.svg";
-import FeesPricingIcon from "@/icons2/feespricing.svg";
-import AuditLogsIcon from "@/icons2/auditlogs.svg";
-
-// Icon component wrapper for consistent styling
-const IconWrapper: React.FC<{ src: string; alt: string; className?: string }> = ({ src, alt, className = 'icon' }) => (
-  <img src={src} alt={alt} className={className} />
-);
+// SVG icon imports using SVGR (?react)
+import DashboardIcon from '@/icons2/dashboard.svg?react';
+import BriefcaseIcon from '@/icons2/briefcase.svg?react';
+import ChevronDownIcon from '@/icons2/chevrondown.svg?react';
+import UsersIcon from '@/icons2/users.svg?react';
+import GuarantorsIcon from '@/icons2/guarantors.svg?react';
+import LoansIcon from '@/icons2/loans.svg?react';
+import DecisionModelsIcon from '@/icons2/decisionmodels.svg?react';
+import SavingsIcon from '@/icons2/savings.svg?react';
+import LoanRequestsIcon from '@/icons2/loanrequests.svg?react';
+import WhitelistIcon from '@/icons2/whitelist.svg?react';
+import KarmaIcon from '@/icons2/karma.svg?react';
+import OrganizationIcon from '@/icons2/organization.svg?react';
+import LoanProductsIcon from '@/icons2/loanproducts.svg?react';
+import SavingsProductsIcon from '@/icons2/savingsproducts.svg?react';
+import FeesIcon from '@/icons2/fees.svg?react';
+import TransactionsIcon from '@/icons2/transactions.svg?react';
+import ServicesIcon from '@/icons2/services.svg?react';
+import ServiceAccountIcon from '@/icons2/serviceaccount.svg?react';
+import SettlementsIcon from '@/icons2/settlements.svg?react';
+import ReportsIcon from '@/icons2/reports.svg?react';
+import PreferencesIcon from '@/icons2/preferences.svg?react';
+import FeesPricingIcon from '@/icons2/feespricing.svg?react';
+import AuditLogsIcon from '@/icons2/auditlogs.svg?react';
 
 const Sidebar: React.FC = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -80,8 +75,7 @@ const Sidebar: React.FC = () => {
 
   return (
     <>
-      {/* Mobile hamburger button */}
-      <button 
+      <button
         className="mobile-menu-toggle"
         onClick={toggleMobileMenu}
         aria-label="Toggle mobile menu"
@@ -89,25 +83,24 @@ const Sidebar: React.FC = () => {
         {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
       </button>
 
-      {/* Mobile overlay */}
       {isMobileMenuOpen && <div className="mobile-overlay" onClick={toggleMobileMenu} />}
 
       <aside className={`sidebar ${isMobileMenuOpen ? 'mobile-open' : ''}`}>
         <div className="sidebar-header">
           <div className="organization-selector">
-            <IconWrapper src={BriefcaseIcon} alt="Briefcase" />
+            <BriefcaseIcon className="icon" />
             <span>Switch Organization</span>
-            <IconWrapper src={ChevronDownIcon} alt="Chevron Down" className="chevron" />
+            <ChevronDownIcon className="chevron icon" />
           </div>
         </div>
 
         <nav className="sidebar-nav">
-          <NavLink 
-            to="/dashboard" 
+          <NavLink
+            to="/dashboard"
             className="nav-item dashboard-link"
             onClick={() => setIsMobileMenuOpen(false)}
           >
-            <IconWrapper src={DashboardIcon} alt="Dashboard" />
+            <DashboardIcon className="icon" />
             <span>Dashboard</span>
           </NavLink>
 
@@ -121,7 +114,7 @@ const Sidebar: React.FC = () => {
                   className={({ isActive }) => `nav-item ${isActive ? 'active' : ''}`}
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
-                  <IconWrapper src={item.icon} alt={item.label} />
+                  <item.icon className="icon" />
                   <span>{item.label}</span>
                 </NavLink>
               ))}
