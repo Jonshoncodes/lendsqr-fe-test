@@ -5,28 +5,28 @@ import './Sidebar.scss';
 
 // Import all custom SVG icons
 import DashboardIcon from "@/icons2/dashboard.svg";
-import BriefcaseIcon from '../../../icons2/briefcase.svg';
-import ChevronDownIcon from '../../../icons2/chevrondown.svg';
-import UsersIcon from '../../../icons2/users.svg';
-import GuarantorsIcon from '../../../icons2/guarantors.svg';
-import LoansIcon from '../../../icons2/loans.svg';
-import DecisionModelsIcon from '../../../icons2/decisionmodels.svg';
-import SavingsIcon from '../../../icons2/savings.svg';
-import LoanRequestsIcon from '../../../icons2/loanrequests.svg';
-import WhitelistIcon from '../../../icons2/whitelist.svg';
-import KarmaIcon from '../../../icons2/karma.svg';
-import OrganizationIcon from '../../../icons2/organization.svg';
-import LoanProductsIcon from '../../../icons2/loanproducts.svg';
-import SavingsProductsIcon from '../../../icons2/savingsproducts.svg';
-import FeesIcon from '../../../icons2/fees.svg';
-import TransactionsIcon from '../../../icons2/transactions.svg';
-import ServicesIcon from '../../../icons2/services.svg';
-import ServiceAccountIcon from '../../../icons2/serviceaccount.svg';
-import SettlementsIcon from '../../../icons2/settlements.svg';
-import ReportsIcon from '../../../icons2/reports.svg';
-import PreferencesIcon from '../../../icons2/preferences.svg';
-import FeesPricingIcon from '../../../icons2/feespricing.svg';
-import AuditLogsIcon from '../../../icons2/auditlogs.svg';
+import BriefcaseIcon from "@/icons2/briefcase.svg";
+import ChevronDownIcon from "@/icons2/chevrondown.svg";
+import UsersIcon from "@/icons2//users.svg";
+import GuarantorsIcon from "@/icons2/guarantors.svg";
+import LoansIcon from "@/icons2/loans.svg";
+import DecisionModelsIcon from "@/icons2/decisionmodels.svg";
+import SavingsIcon from "@/icons2/savings.svg";
+import LoanRequestsIcon from "@/icons2/loanrequests.svg";
+import WhitelistIcon from "@/icons2/whitelist.svg";
+import KarmaIcon from "@/icons2/karma.svg";
+import OrganizationIcon from "@/icons2/organization.svg";
+import LoanProductsIcon from "@/icons2/loanproducts.svg";
+import SavingsProductsIcon from "@/icons2//savingsproducts.svg";
+import FeesIcon from "@/icons2/fees.svg";
+import TransactionsIcon from "@/icons2/transactions.svg";
+import ServicesIcon from "@/icons2/services.svg";
+import ServiceAccountIcon from "@/icons2/serviceaccount.svg";
+import SettlementsIcon from "@/icons2/settlements.svg";
+import ReportsIcon from "@/icons2/reports.svg";
+import PreferencesIcon from "@/icons2/preferences.svg";
+import FeesPricingIcon from "@/icons2/feespricing.svg";
+import AuditLogsIcon from "@/icons2/auditlogs.svg";
 
 // Icon component wrapper for consistent styling
 const IconWrapper: React.FC<{ src: string; alt: string; className?: string }> = ({ src, alt, className = 'icon' }) => (
