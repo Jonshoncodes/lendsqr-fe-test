@@ -20,8 +20,10 @@ const PublicRoute: React.FC<{ children: React.ReactNode }> = ({ children }) => {
 };
 
 function App() {
+  const basename = import.meta.env.PROD ? '/lendsqr-fe-test' : '';
+
   return (
-    <Router>
+    <Router basename={basename}>
       <Routes>
         <Route 
           path="/login" 
